@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - FendiBrm | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="about-section">
+        <div class="about-container">
+            <h1>About Me</h1>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Hello, I'm <span>FendiBrm</span></h2>
+                    <p>Selamat datang di halaman tentang saya! Saya adalah seorang developer yang passionate dalam mengembangkan website dan aplikasi web yang berkualitas.</p>
+                    
+                    <h3>Keahlian</h3>
+                    <ul class="skills-list">
+                        <li>HTML5</li>
+                        <li>CSS3</li>
+                        <li>JavaScript</li>
+                        <li>Responsive Design</li>
+                        <li>UI/UX Design</li>
+                    </ul>
+
+                    <h3>Pengalaman</h3>
+                    <p>Saya telah mengembangkan beberapa project website menggunakan HTML, CSS, dan JavaScript. Saya terus belajar dan berkembang untuk meningkatkan skill dalam web development, walaupun skill saya mungkin masih kurang daripada oranglain.</p>
+
+                    <h3>Tujuan</h3>
+                    <p>Tujuan saya adalah menjadi developer profesional yang dapat membuat website dan aplikasi web yang user-friendly dan berkualitas tinggi.</p>
+
+                    <div class="about-links">
+                        <a href="https://www.instagram.com/imfndisnt__/" class="btn-social">Instagram</a>
+                        <a href="https://wa.me/6282136658391" class="btn-social">WhatsApp</a>
+                    </div>
+                </div>
+
+                <div class="about-image">
+                    <img src="fendi-bisa.png" alt="FendiBrm">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="footer-section">
+        <p>&copy; 2024 FendiBrm. All rights reserved.</p>
+        <p>Version 1.0.0 | Last Updated: June 2025</p>
+    </section>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Tutup menu saat link diklik
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>

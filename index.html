@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FendiBrm | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Hi, Welcome</h1>
+            <h2>I'm <span>FendiBrm</span></h2>
+        </div>
+        <div class="hero-logo">
+            <!-- ✅ URL online (lebih aman) -->
+            <img src="https://example.com/fendi-bisa.png" alt="Logo">
+        </div>
+    </section>
+
+    <section class="content">
+        <h3>My First Im build a Website</h3>
+        <p>Website ini dibuat menggunakan HTML dan CSS.</p>
+        <p>Terima kasih telah mengunjungi portfolio saya!</p>
+        <p>Salam, FendiBrm</p>
+
+        <div class="icons">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" alt="HTML5">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg" alt="CSS3">
+        </div>
+        <div class="footer">
+            <p>Created by FendiBrm</p>
+            <p>Contact:
+                <a href="https://www.instagram.com/imfndisnt__/">Instagram</a> |
+                <a href="https://wa.me/6282136658391">WhatsApp</a>
+                <p>© 2024 FendiBrm. All rights reserved.</p>
+                <p>Version 1.0.0</p>
+                <p>Last Updated: June 2025</p>
+                <p>Hosted on GitHub Pages</p>
+                <p>Designed by FendiBrm</p>
+        </div>
+    </section>
+<script>
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Tutup menu saat link diklik
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>

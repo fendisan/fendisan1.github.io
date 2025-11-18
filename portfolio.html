@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - FendiBrm | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="portfolio-section">
+        <div class="portfolio-container">
+            <h1>My Portfolio</h1>
+            <p class="portfolio-subtitle">Koleksi project dan karya yang telah saya buat</p>
+
+            <div class="portfolio-filter">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="web">Web Design</button>
+                <button class="filter-btn" data-filter="frontend">Frontend</button>
+                <button class="filter-btn" data-filter="ui">UI/UX</button>
+            </div>
+
+            <div class="portfolio-grid">
+                <!-- Project 1 -->
+                <div class="portfolio-item" data-category="web">
+                    <div class="portfolio-image">
+                        <img src="fendisant.png" alt="Portfolio Website">
+                        <div class="portfolio-overlay">
+                            <h3>Portfolio Website</h3>
+                            <p>HTML, CSS, JavaScript</p>
+                            <a href="https://www.portfoliobox.com" class="view-btn" target="_blank" rel="noopener noreferrer">View Project</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="portfolio-item" data-category="frontend">
+                    <div class="portfolio-image">
+                        <img src="https://via.placeholder.com/400x300?text=Todo+App" alt="Todo App">
+                        <div class="portfolio-overlay">
+                            <h3>Todo Application</h3>
+                            <p>HTML, CSS, JavaScript</p>
+                            <a href="https://github.com/yourusername/todo-app" class="view-btn" target="_blank" rel="noopener noreferrer">View Project</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="portfolio-item" data-category="web">
+                    <div class="portfolio-image">
+                        <img src="https://via.placeholder.com/400x300?text=Landing+Page" alt="Landing Page">
+                        <div class="portfolio-overlay">
+                            <h3>Landing Page</h3>
+                            <p>HTML, CSS, Responsive Design</p>
+                            <a href="https://your-landing-page.com" class="view-btn" target="_blank" rel="noopener noreferrer">View Project</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="portfolio-item" data-category="ui">
+                    <div class="portfolio-image">
+                        <img src="https://via.placeholder.com/400x300?text=UI+Design" alt="UI Design">
+                        <div class="portfolio-overlay">
+                            <h3>Mobile UI Design</h3>
+                            <p>Figma, UI/UX Design</p>
+                            <a href="https://www.figma.com/file/your-design-id" class="view-btn" target="_blank" rel="noopener noreferrer">View Project</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="portfolio-item" data-category="frontend">
+                    <div class="portfolio-image">
+                        <img src="https://via.placeholder.com/400x300?text=Weather+App" alt="Weather App">
+                        <div class="portfolio-overlay">
+                            <h3>Weather App</h3>
+                            <p>HTML, CSS, JavaScript, API</p>
+                            <a href="https://weather-app-demo.netlify.app" class="view-btn" target="_blank" rel="noopener noreferrer">View Project</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="portfolio-item" data-category="web">
+                    <div class="portfolio-image">
+                        <img src="shopee.png" alt="E-Commerce">
+                        <div class="portfolio-overlay">
+                            <h3>E-Commerce Website</h3>
+                            <p>HTML, CSS, JavaScript</p>
+                            <a href="https://shopee.co.id" class="view-btn" target="_blank" rel="noopener noreferrer">View Project</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="footer-section">
+        <p>&copy; 2024 FendiBrm. All rights reserved.</p>
+        <p>Version 1.0.0 | Last Updated: June 2025</p>
+    </section>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Tutup menu saat link diklik
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Portfolio filter functionality
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                portfolioItems.forEach(item => {
+                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                        item.style.display = 'block';
+                        setTimeout(() => item.classList.add('show'), 10);
+                    } else {
+                        item.classList.remove('show');
+                        setTimeout(() => item.style.display = 'none', 300);
+                    }
+                });
+            });
+        });
+
+        // Initialize all items as visible
+        portfolioItems.forEach(item => item.classList.add('show'));
+    </script>
+</body>
+</html>

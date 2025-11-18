@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - FendiBrm | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="contact-section">
+        <div class="contact-container">
+            <h1>Contact Me</h1>
+            <p class="contact-subtitle">Hubungi saya untuk kolaborasi atau pertanyaan lebih lanjut</p>
+
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Informasi Kontak</h2>
+                    
+                    <div class="info-item">
+                        <h3>📧 Email</h3>
+                        <p><a href="mailto:fendisantoso49@gmail.com">fendisantoso49@gmail.com</a></p>
+                    </div>
+
+                    <div class="info-item">
+                        <h3>📱 WhatsApp</h3>
+                        <p><a href="https://wa.me/6282136658391" target="_blank">+62 821 3665 8391</a></p>
+                    </div>
+
+                    <div class="info-item">
+                        <h3>📍 Instagram</h3>
+                        <p><a href="https://www.instagram.com/imfndisnt__/" target="_blank">@imfndisnt__</a></p>
+                    </div>
+
+                    <div class="info-item">
+                        <h3>💼 Tersedia Untuk</h3>
+                        <ul>
+                            <li>Freelance Project</li>
+                            <li>Web Development</li>
+                            <li>UI/UX Design</li>
+                            <li>Konsultasi</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper">
+                    <h2>Kirim Pesan</h2>
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Nama Anda</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subjek</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Pesan</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-submit">Kirim Pesan</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="footer-section">
+        <p>&copy; 2024 FendiBrm. All rights reserved.</p>
+        <p>Version 1.0.0 | Last Updated: June 2025</p>
+    </section>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Tutup menu saat link diklik
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Handle form submission
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Terima kasih telah menghubungi saya! Saya akan merespons segera.');
+            contactForm.reset();
+        });
+    </script>
+</body>
+</html>
