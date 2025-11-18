@@ -73,6 +73,10 @@ body {
 }
 
 /* ---- HERO SECTION ---- */
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 .hero {
     background: linear-gradient(135deg, #1a1a1a, #0a0a0a);
     padding: 100px 40px;
@@ -94,7 +98,7 @@ body {
 }
 
 .hero-logo img {
-    width: 150px;
+    width: 80px;
     opacity: 0.9;
     filter: brightness(1.1);
 }
