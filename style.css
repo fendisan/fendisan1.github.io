@@ -673,5 +673,35 @@ body {
         padding: 8px 15px;
         font-size: 14px;
     }
+    /*---- RESPONSIVE (Hanya CSS Toggle) ---- */
+    @media (max-width: 600px) {
+        .hamburger {
+            display: flex;
+    }  
+        .nav-menu {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        background: #1a1a1a;
+        gap: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease;
+        z-index: 10;
+    }
+        ..menu-checkbox:checked ~ .nav-menu {
+        max-height: 500px;
+    }
+       .menu-checkbox:checked + .hamburger span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 6px);
+    } .menu-checkbox:checked + .hamburger span:nth-child(2) {
+        opacity: 0;
+    }
+        .menu-checkbox:checked + .hamburger span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -6px);
+    }
+        
 }
 
