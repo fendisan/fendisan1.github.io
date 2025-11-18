@@ -79,23 +79,6 @@ body {
     justify-content: space-between;
 }
 
-.hero-text {
-    flex: 1;
-}
-
-.hero-logo {
-    position: absolute;
-    right: 40px;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.hero-logo img {
-    width: 150px;
-    opacity: 0.9;
-    filter: brightness(1.1);
-}
-
 .hero-text h1 {
     font-size: 48px;
     margin: 0;
