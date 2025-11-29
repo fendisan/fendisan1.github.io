@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ini website milik fendi pertama</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">
+            <img src="logo-baru.png" alt="Logo R" width="30"> 
+        </div>
+        <nav>
+            <ul>
+                <li class="has-submenu">
+                    <button class="submenu-toggle" aria-expanded="false">rondap raimu</button>
+                    <ul class="submenu" aria-hidden="true">
+                        <li><a href="page1.html">rondap raimu</a></li>
+                        <li><a href="page2.html">Tentang Saya</a></li>
+                        <li><a href="page3.html">Free Base</a></li>
+                    </ul>
+                </li>
+                <li><a href="#about">Tentang Saya</a></li>
+                <li><a href="#free base">Free Base</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="hero-section">
+        <div class="hero-content">
+            <p class="website-domain">fendisanto.id</p>
+            
+            <h1>BELAJAR PEMROGRAMAN UNTUK SIAPAPUN</h1>
+            
+            <p class="slogan">Mulai Belajar dari Sekarang </p>
+            
+            <a href="mulai.html" class="cta-button">Mulai Belajar Sekarang</a>
+        </div>
+        </main>
+
+    <script>
+        // Toggle submenu saat tombol diklik; tutup saat klik di luar
+        document.addEventListener('click', function(e) {
+            const toggle = e.target.closest('.submenu-toggle');
+
+            if (toggle) {
+                const li = toggle.parentElement;
+                const submenu = li.querySelector('.submenu');
+                const expanded = toggle.getAttribute('aria-expanded') === 'true';
+                toggle.setAttribute('aria-expanded', String(!expanded));
+                submenu.setAttribute('aria-hidden', String(expanded));
+                submenu.classList.toggle('open', !expanded);
+                return;
+            }
+
+            // jika klik bukan di dalam elemen .has-submenu, tutup semua submenu
+            if (!e.target.closest('.has-submenu')) {
+                document.querySelectorAll('.submenu.open').forEach(function(s) {
+                    s.classList.remove('open');
+                    const btn = s.parentElement.querySelector('.submenu-toggle');
+                    if (btn) btn.setAttribute('aria-expanded', 'false');
+                    s.setAttribute('aria-hidden', 'true');
+                });
+            }
+        });
+    </script>
+
+    </body>
+</html>
